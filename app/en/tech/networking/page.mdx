@@ -1,0 +1,24 @@
+---
+title: Networking
+description: Notes on networks, servers, and infrastructure.
+---
+
+# Networking
+
+Notes on how computers talk to each other.
+
+## Reverse Proxy
+
+I usually use **Caddy** or **Nginx** for reverse proxying.
+Caddy is much easier for automatic SSL — literally one line of config.
+
+## DNS
+
+- Always set low TTL before migration.
+- Cloudflare for DNS + CDN is the best combo for small projects.
+
+## Monitoring
+
+I use **Uptime Kuma** for self-hosted monitoring. Easy setup, notifications to Discord or Telegram.
+
+If you're just starting out, make sure your [coding](/en/tech/coding) foundation is solid before worrying about infra.

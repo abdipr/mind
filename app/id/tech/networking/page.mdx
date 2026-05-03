@@ -1,0 +1,24 @@
+---
+title: Networking
+description: Catatan tentang jaringan, server, dan infrastruktur.
+---
+
+# Networking
+
+Catatan tentang gimana cara komputer ngobrol satu sama lain.
+
+## Reverse Proxy
+
+Gue biasanya pake **Caddy** atau **Nginx** buat reverse proxy.
+Caddy lebih gampang buat dapet SSL otomatis — literally satu baris config.
+
+## DNS
+
+- Selalu set TTL rendah pas mau migrasi.
+- Cloudflare buat DNS + CDN itu combo terbaik buat project kecil.
+
+## Monitoring
+
+Gue pake **Uptime Kuma** buat self-hosted monitoring. Setup gampang, notifikasi ke Discord atau Telegram.
+
+Kalo lo baru mulai, pastikan fondasi [coding](/id/tech/coding) lo udah kuat dulu sebelum ngurusin infra.

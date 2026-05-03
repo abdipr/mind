@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@import "nextra-theme-docs/style.css";
+
+@theme {
+  /* Gunakan variabel dari next/font/google */
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  --color-accent: #335ddd;
+  --color-secondary: #264ab8;
+  --color-tertiary: #4873f7;
+  --color-bg: #020617;
+  --color-bg-2: #1b2438;
+  --color-bg-3: #273249;
+  --color-text: #ffffff;
+
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+}
+
+@layer base {
+  :root {
+    --nextra-font-sans:
+      var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+    --nextra-primary-hue: 225deg;
+    --nextra-primary-saturation: 70%;
+  }
+
+  html,
+  body,
+  * {
+    font-family: var(--nextra-font-sans) !important;
+  }
+
+  /* Dark mode overrides */
+  .dark {
+    --nextra-bg: var(--color-bg) !important;
+    background-color: var(--color-bg) !important;
+    color: var(--color-text);
+    --nextra-border-color: var(--color-slate-800);
+  }
+
+  .dark body {
+    background-color: var(--color-bg) !important;
+  }
+
+  /* Fix Mobile Sidebar & Navbar Transparancy */
+  .dark .nextra-sidebar-container,
+  .dark .nextra-nav-container,
+  .dark .nextra-search ul,
+  .dark .nextra-menu-overlay,
+  .dark aside {
+    background-color: var(--color-bg) !important;
+  }
+
+  /* Memperhalus tampilan border */
+  .dark .nextra-sidebar-container,
+  .dark .nextra-nav-container,
+  .dark hr,
+  .dark .nextra-border,
+  .dark [class*="border-"] {
+    border-color: var(--color-slate-800) !important;
+  }
+
+  /* FOOTER FIX: Full width background, centered & padded content */
+  footer {
+    background-color: var(--color-slate-100) !important;
+    width: 100% !important;
+    margin-top: 0 !important; /* Hapus jarak atas */
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .dark footer {
+    background-color: var(--color-slate-900) !important;
+  }
+
+  /* Konten di dalam footer: Kasih padding dan benar-benar rata tengah */
+  footer > div {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 3rem 1.5rem !important; /* Padding yang pas */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  footer hr {
+    display: none !important;
+  }
+
+  .dark hr {
+    opacity: 0.5;
+    border-top: 1px solid var(--color-slate-800);
+  }
+
+  .dark .nextra-nav-container {
+    backdrop-filter: none !important;
+  }
+}
+
+@variant dark (&:where(.dark *));

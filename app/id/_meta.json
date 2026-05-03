@@ -1,0 +1,18 @@
+{
+  "index": "Introduction",
+  "---1": {
+    "type": "separator",
+    "title": "Garden"
+  },
+  "life": "Life",
+  "thinking": "Thinking",
+  "tech": "Tech",
+  "---2": {
+    "type": "separator",
+    "title": "Reference"
+  },
+  "tools": "Tools",
+  "meta": {
+    "type": "hidden"
+  }
+}
