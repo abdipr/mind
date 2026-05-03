@@ -1,4 +1,6 @@
 node_modules
 .next
+.worker-next
+.open-next
 .vercel
 .env
