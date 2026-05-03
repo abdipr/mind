@@ -22,24 +22,8 @@ const footer = (
   </Footer>
 );
 
-function fixPageMap(map, locale) {
-  return map.map((item) => {
-    if (item.data) return item;
-    const newItem = { ...item };
-    if (newItem.route && !newItem.route.startsWith(`/${locale}`)) {
-      newItem.route = `/${locale}${newItem.route === "/" ? "" : newItem.route}`;
-    }
-    if (newItem.children) {
-      newItem.children = fixPageMap(newItem.children, locale);
-    }
-    return newItem;
-  });
-}
-
 export default async function EnLayout({ children }) {
-  const allPages = await getPageMap("/en");
-  const enFolder = allPages.find((item) => item.name === "en");
-  const pageMap = enFolder ? fixPageMap(enFolder.children, "en") : [];
+  const pageMap = await getPageMap("/en");
 
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning className={dmSans.variable}>

@@ -22,24 +22,9 @@ const footer = (
   </Footer>
 );
 
-function fixPageMap(map, locale) {
-  return map.map((item) => {
-    if (item.data) return item;
-    const newItem = { ...item };
-    if (newItem.route && !newItem.route.startsWith(`/${locale}`)) {
-      newItem.route = `/${locale}${newItem.route === "/" ? "" : newItem.route}`;
-    }
-    if (newItem.children) {
-      newItem.children = fixPageMap(newItem.children, locale);
-    }
-    return newItem;
-  });
-}
-
 export default async function IdLayout({ children }) {
-  const allPages = await getPageMap("/id");
-  const idFolder = allPages.find((item) => item.name === "id");
-  const pageMap = idFolder ? fixPageMap(idFolder.children, "id") : [];
+  // Ambil map khusus untuk /id. Nextra v4 otomatis memberikan route yang benar.
+  const pageMap = await getPageMap("/id");
 
   return (
     <html lang="id" dir="ltr" suppressHydrationWarning className={dmSans.variable}>
