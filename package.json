@@ -3,10 +3,10 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "start": "next",
+    "start": "next start",
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "pagefind --site .next/server/app --output-path .vercel/output/static/_pagefind",
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "deploy": "npx opennextjs-cloudflare"
   },
   "dependencies": {
@@ -22,7 +22,8 @@
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "pagefind": "^1.5.2"
+    "pagefind": "^1.5.2",
+    "wrangler": "^4.87.0"
   },
   "overrides": {
     "zod": "4.3.6",
