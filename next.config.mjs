@@ -1,11 +1,6 @@
 import nextra from "nextra";
 
-const withNextra = nextra({
-  i18n: {
-    locales: ["id", "en"],
-    defaultLocale: "id",
-  },
-});
+const withNextra = nextra({});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
