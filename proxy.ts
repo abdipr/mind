@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server'
 
+// Wajib ditambahkan agar kompatibel dengan Cloudflare Workers
+export const runtime = 'edge'
+
 export function proxy(request) {
   const { pathname } = request.nextUrl
   
