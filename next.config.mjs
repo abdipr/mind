@@ -1,20 +1,21 @@
-import nextra from "nextra";
+import nextra from 'nextra'
 
 const withNextra = nextra({
-  // Nextra config
-});
+  theme: 'nextra-theme-docs',
+  themeConfig: './theme.config.jsx',
+})
 
-export default withNextra({
-  i18n: {
-    locales: ["id", "en"],
-    defaultLocale: "id",
-  },
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'standalone', // Wajib untuk OpenNext Cloudflare
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "abdi.cc",
+        protocol: 'https',
+        hostname: 'abdi.cc',
       },
     ],
   },
-});
+}
+
+export default withNextra(nextConfig)
